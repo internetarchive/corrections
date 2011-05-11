@@ -1,0 +1,119 @@
+body {
+    font-family: Palatino, "Times New Roman", Times, serif;
+    padding: 20px;
+    background-color: #e2dcc5;
+    font-size: 1em;
+}
+.bookMeta {
+    font-size: 1.25em;
+    font-weight:bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bookMeta .button {
+    float: right; cursor: pointer; font-weight: normal; font-size: 0.75em;
+    background-color: ivory;
+    border: solid lightblue 3px;
+    padding: 2px;
+    border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px;
+    margin-left: 6px;
+    vertical-align: top;
+}
+.bookMeta form { float: right;}
+
+.bookMeta .label {
+    float: right; font-weight: bold; font-size: 125%;
+    vertical-align: top;
+}
+.bookMeta .button#SAVEBUTTON {
+    font-size: 125%; margin-left: 12px;}
+
+.sideBySide {
+    display: block;
+}
+
+td {vertical-align: top;}
+
+.pageImage {}
+.pageText {
+    border: 1px solid black;
+    background-color: white;
+    padding: 20px;}
+
+.abbyycentered { text-align: center;}
+
+/* Special information */
+
+.abbyypagehead, .abbyypagefoot {
+    opacity: 0.7; background-color: silver;
+    padding-right: 4px; padding-left: 4px; 
+    display: none;}
+a.abbyyblock, .abbyyparmark, .abbyyline .lineinfo, .abbyyleafstart, .abbyypagestart {
+    padding: 2px; padding-left: 4px; padding-right: 4px; color: purple; opacity: 0.8;
+    color: red; background-color: lightblue;
+    display: none;}
+span.abbyydroppedhyphen {
+    content: '-'; opacity: 0.5; background-color: pink; color: blue;
+    font-size: 125%;
+    display: none;}
+
+span.abbyyword { white-space: nowrap; cursor: pointer;}
+span.abbyyword:hover { text-decoration: underline;}
+
+.replaced {
+    text-decoration: line-through;
+    color: red; background-color: yellow;
+    padding-left: 4px;
+    display: none; }
+span.abbyyword.editing { text-decoration: line-through; color: red;}
+span.abbyyword.edited { color: purple;}
+
+.offpage { display: none; opacity: 0.5;}
+
+/* Selective display */
+
+br.abbyybreak { display: none;}
+body.showbreaks .displayed br.abbyybreak { display: inline;}
+body.showbreaks .displayed .abbyydroppedhyphen {
+    display: inline;}
+
+body.showpages span.offpage, body.showpages a.offpage { display: inline;}
+body.showblocks span.offpage, body.showblocks a.offpage { display: inline;}
+
+body.showinfo .displayed a.abbyyblock,
+body.showinfo .displayed .abbyyparmark,
+body.showinfo .displayed .abbyyline .lineinfo,
+body.showinfo .displayed .abbyyleafstart,
+body.showinfo .displayed .abbyypagestart {
+    display: inline;}
+
+body.showhidden .displayed .abbyypagehead,
+body.showhidden .displayed .abbyypagefoot, 
+body.showhidden .displayed .abbyydroppedhyphen {
+    display: inline;}
+
+body.showedits span.replaced, body.showedits a.replaced {
+    display: inline;}
+body.showedits div.replaced {
+    display: block;}
+
+body.showedits .bookMeta .button#EDITSBUTTON,
+body.showinfo .bookMeta .button#INFOBUTTON,
+body.showbreaks .bookMeta .button#BREAKSBUTTON,
+body.showpages .bookMeta .button#PAGESBUTTON,
+body.showhidden .bookMeta .button#HIDDENBUTTON {
+    border-style: inset; border-color: blue; color: blue;}
+
+body.showhidden span.droppedhyphen {  display: inline; }
+
+td#PAGETEXT img { display: none;}
+td#PAGETEXT p { display: none;}
+td#PAGETEXT p.displayed { display: block;}
+td#PAGETEXT a.displayed p { display: block;}
+
+input.wordeditor {
+    position: absolute; margin-top: -4ex;}
+
+.abbyytext .abbynormal, .abbyytext .abbyyunknown {
+    background-color: yellow;}

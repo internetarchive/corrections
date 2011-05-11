@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <title>%%TITLE</title>
+    <link rel="stylesheet" type="text/css" href="proof.css"/>
+    <meta name="IMGTEMPLATE" content="%%IMGTEMPLATE"/>
+    <script language="javascript"> var olib="%%OLIB";</script>
+    <script language="javascript" src="proof.js"></script>
+    <style id="ABBYYSTYLE">%%STYLE</style>
+  </head> 
+  <body onload="init(); gotoPage();" data-startpage="%%LEAF" class="showbreaks"> 
+    <form action="proof.php" method="POST"> 
+      Enter a book id (e.g. OL13684064M) or an openlibrary id (e.g. OL13684064M) and leaf (~page) number:<br /> 
+      <input type="text" NAME= "SPEC" value="%%SPEC" style="width: 70%" />
+      <input type="text" NAME= "LEAF" ID="PAGEINPUT"
+	     value="%%LEAF" style="width: 15%"
+	     onkeypress="leaf_keypress(event);"/>
+      <input type="submit" />
+    </form>
+    <div class="bookMeta">
+      <a href="%%BOOKLINK" target="_blank">%%TITLE</a>
+      by <a href="%%AUTHORLINK" target="_blank">%%AUTHORNAME</a>,
+      page <span id="PAGEDISPLAY">%%LEAF</span>
+      &nbsp;&nbsp;&nbsp;
+      <a href="javascript:gotoPage(pageno-1);">&lt;&nbsp;prev</a>
+      &nbsp;| <a href="javascript:gotoPage(pageno+1);">next &gt;</a>
+      <form action="save.php" target="_blank" method="POST"
+	    onsubmit="onsave_submit(event);">
+	<input type="SUBMIT" name="ACTION" value="Save"/>
+	<input type="HIDDEN" name="CONTENT" value="" id="SAVECONTENT"/>
+	<input type="HIDDEN" name="OLID" value="%%OLID" id="SAVEOLID"/>
+	<input type="HIDDEN" name="BOOKID" value="%%BOOKID" id="BOOKID"/>
+      </form>
+      <span class="button" onclick="toggleClass(document.body,'showhidden')"
+	    id="HIDDENBUTTON">
+	hidden</span>
+      <span class="button" onclick="toggleClass(document.body,'showinfo')"
+	    id="INFOBUTTON">
+	info</span>
+      <span class="button" onclick="toggleClass(document.body,'showbreaks')"
+	    id="BREAKSBUTTON">
+	breaks</span>
+      <span class="button" onclick="toggleClass(document.body,'showedits')"
+	    id="EDITSBUTTON">
+	edits</span>
+    </div> 
+    <table class="sideByside"> 
+      <tr> 
+        <td class="pageImage">
+	  <img ID="PAGEIMAGE"/>
+	</td> 
+        <td class="pageText abbyytext" id="PAGETEXT"
+	    onblur="stop_editing();"
+	    onclick="editword_click(event);">
+	%%BOOKTEXT
+	</td> 
+      </tr> 
+    </table> 
+  </body> 
+</html> 

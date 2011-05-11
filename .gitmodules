@@ -1,0 +1,3 @@
+[submodule "epub"]
+	path = epub
+	url = git@github.com:internetarchive/epub.git
