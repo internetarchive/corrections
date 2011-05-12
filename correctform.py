@@ -2,6 +2,8 @@
 #import cgitb
 #cgitb.enable()
 
+import appauth
+
 from urllib2 import urlopen, HTTPError
 from urlparse import urlparse
 
@@ -15,9 +17,10 @@ import cgi
 import re
 import io
 
+import epub
 from epub import abbyyhtml
 from epub import abbyygethtml
-from abbyygethtml import gethtml
+from epub.abbyygethtml import gethtml
 
 def getpageurl(bookid,doc=False):
     if not doc: doc=bookid
@@ -54,7 +57,7 @@ authorid=olibinfo["authors"][0]["key"]
 olibstream=urlopen("http://www.openlibrary.org%s.json"%authorid)
 authorinfo=json.load(olibstream)
 
-template=open(os.path.join(os.path.dirname(__file__),"suds/proof.html"),"rt",).read()
+template=open(os.path.join(os.path.dirname(__file__),"proof.html"),"rt",).read()
 html=abbyygethtml.getbookcontent(bookid,cache)
 rewrite=string.replace(
     string.replace(

@@ -2,6 +2,8 @@
 #import cgitb
 #cgitb.enable()
 
+import appauth
+
 from urllib2 import urlopen, HTTPError
 from urlparse import urlparse
 from httplib import HTTPConnection
@@ -17,6 +19,7 @@ import re
 import io
 import appauth
 
+import epub
 from epub import abbyyhtml
 from epub import abbyygethtml
 
