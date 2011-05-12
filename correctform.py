@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#import cgitb
+#cgitb.enable()
+
 from urllib2 import urlopen, HTTPError
 from urlparse import urlparse
 
@@ -9,14 +12,11 @@ import string
 import StringIO
 import json
 import cgi
-#import cgitb
 import re
 import io
 
-#cgitb.enable()
-
-import abbyyhtml
-import abbyygethtml
+from epub import abbyyhtml
+from epub import abbyygethtml
 from abbyygethtml import gethtml
 
 def getpageurl(bookid,doc=False):

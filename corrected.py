@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+#import cgitb
+#cgitb.enable()
+
 from urllib2 import urlopen, HTTPError
 from urlparse import urlparse
 from httplib import HTTPConnection
@@ -10,15 +13,12 @@ import string
 import StringIO
 import json
 import cgi
-import cgitb
 import re
 import io
 import appauth
 
-cgitb.enable()
-
-import abbyyhtml
-import abbyygethtml
+from epub import abbyyhtml
+from epub import abbyygethtml
 
 def s3save(url,data):
     auth="LOW %s:%s"%(appauth.key,appauth.secret)

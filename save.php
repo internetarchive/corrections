@@ -16,5 +16,5 @@ $stream=fopen($cache_file,"w");
 fwrite($stream,$content);
 fclose($stream);
 
-passthru("python ../corrected.py $olid $bookid $cache_file 2>&1");
+passthru("python corrected.py $olid $bookid $cache_file 2>&1");
 ?>

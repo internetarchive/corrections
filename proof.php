@@ -15,5 +15,5 @@ $spec = escapeshellarg($spec_arg);
 $leaf = escapeshellarg($leaf_arg);
 
 set_time_limit(720);
-passthru("python ../correctform.py $spec $leaf ./cache/ 2>&1");
+passthru("python correctform.py $spec $leaf ./cache/ 2>&1");
 ?>
